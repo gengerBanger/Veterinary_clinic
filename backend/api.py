@@ -37,5 +37,5 @@ def update_dog(dog_id: int, new_dog: PostDog, db: Session = Depends(get_session)
     db.execute(update(Dogs).where(Dogs.dog_id == dog_id)
                .values(name_=new_dog.name_, kind_=new_dog.kind_.value))
     db.commit()
-    update_dog = GetDog(dog_id=dog_id, name_=new_dog.name_, kind_=new_dog.kind_.value )
+    update_dog = GetDog(dog_id=dog_id, name_=new_dog.name_, kind_=new_dog.kind_.value)
     return update_dog
